@@ -1,0 +1,16 @@
+PODS:
+  - LHSticker (0.1.0)
+
+DEPENDENCIES:
+  - LHSticker (from `../`)
+
+EXTERNAL SOURCES:
+  LHSticker:
+    :path: ../
+
+SPEC CHECKSUMS:
+  LHSticker: 927e77a38624d52de1b852c72174637c739fc2dd
+
+PODFILE CHECKSUM: 66830c8ce9285359a633ce940bd89fa3a56f7595
+
+COCOAPODS: 1.3.1

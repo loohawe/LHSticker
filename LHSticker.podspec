@@ -9,34 +9,22 @@
 Pod::Spec.new do |s|
   s.name             = 'LHSticker'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of LHSticker.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
+  s.summary          = '分块加载的 View 使用的协议'
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+                       分块加载的 View 使用的协议.
                        DESC
-
-  s.homepage         = 'https://github.com/loohawe@gmail.com/LHSticker'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.homepage         = 'http://git.mogo.com/NexT/LHSticker'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'loohawe@gmail.com' => 'luhao@mogoroom.com' }
-  s.source           = { :git => 'https://github.com/loohawe@gmail.com/LHSticker.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { :git => 'http://git.mogo.com/NexT/LHSticker', :tag => s.version.to_s }
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'LHSticker/Classes/**/*'
+  s.source_files = 'LHSticker/**/*.{h,m,swift}'
   
-  # s.resource_bundles = {
-  #   'LHSticker' => ['LHSticker/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
+  s.resource_bundles = {
+    'LHSticker' => ['LHSticker/*.{png,nib}']
+  }
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
 end
