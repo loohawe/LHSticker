@@ -1,0 +1,203 @@
+
+disabled_rules: # rule identifiers to exclude from running
+  # - variable_name
+  - fallthrough
+  - function_parameter_count
+  - generic_type_name
+  - implicitly_unwrapped_optional
+  - is_disjoint
+  - joined_default_parameter
+  - large_tuple
+  - number_separator
+  - object_literal
+  - pattern_matching_keywords
+  - private_unit_test
+  - sorted_imports
+  - unused_enumerated
+  - unused_optional_binding
+  - valid_ibinspectable
+  - identifier_name 
+  - extension_access_modifier # <- what's it?
+  - trailing_closure
+  - private_over_fileprivate
+  - private_outlet # <- it doesn't work T_T
+  # 这个特别好，所有UI组件全部没有资格暴露出去的，无论是强暴还是强暴，vc的view属性一律不允许被别人访问，
+  # Cell的UI属性也不许被vc访问
+  # ✅ foo.map { $0 + 1 }
+  # ❌ foo.map({ $0 + 1 })
+
+
+opt_in_rules: # some rules are only opt-in
+  - legacy_cggeometry_functions
+  - legacy_constant
+  - legacy_constructor
+  # 上面这两个都是CG相关的，废掉了原有的CG函数：CGRectMake／CGRectZero等
+
+  - leading_whitespace
+  - trailing_newline
+  - colon
+  - comma
+  - trailing_comma
+  - mark
+  - cyclomatic_complexity
+  - control_statement
+  - operator_usage_whitespace
+  - redundant_void_return
+  - return_arrow_whitespace
+  - statement_position
+  - trailing_semicolon
+  - trailing_whitespace
+  - unneeded_parentheses_in_closure_argument
+  - unused_closure_parameter
+  - vertical_parameter_alignment # <- it doesn't work T_T
+  - vertical_whitespace
+  - void_return
+  - opening_brace #这是花括号换行
+  # 上面格式相关的，空格什么的
+
+  - weak_delegate
+  - type_name
+  - overridden_super_call
+  - nesting
+  - discarded_notification_center_observer
+  - notification_center_detachment
+  - empty_count # <- it doesn't work T_T
+  # ✅ [Int]().isEmpty
+  # ❌ [Int]().↓count == 0
+
+  - discouraged_direct_init # <- it doesn't work T_T
+  - empty_enum_arguments
+
+  - empty_parameters
+  # ✅ let abc: () -> Void
+  # ❌ let abc: (Void) -> Void
+
+  - empty_parentheses_with_trailing_closure
+  # ✅ [1, 2].map { $0 + 1 }
+  # ❌ [1, 2].map() { $0 + 1 }
+
+  - explicit_init
+  # ✅ let ass = String()
+  # ❌ let ass = String.init()
+
+  - explicit_top_level_acl # <- it doesn't work T_T
+  # ✅ enum A {}
+  # ❌ internal enum A {}
+
+  - explicit_type_interface # <- it doesn't work T_T
+  # ✅ var myVar: Int? = 0
+  # ❌ var myVar = 0
+
+  - fatal_error_message # <- it doesn't work T_T
+  # ✅ fatalError("Foo")
+  # ❌ fatalError("")
+
+  - first_where # <- it doesn't work T_T
+  # ✅ myList.first(where: { $0 % 2 == 0 })
+  # ❌ myList.filter { $0 % 2 == 0 }.first
+
+  - for_where # <- it doesn't work T_T
+  # ✅ for user in users where user.id == 1 { }
+  # ❌ for user in users {
+  #         if user.id == 1 { return true }
+  #     }
+
+  - force_cast # <- it doesn't work T_T
+  # ✅ NSNumber() as? Int
+  # ❌ NSNumber() as! Int
+
+  - force_try # <- it doesn't work T_T
+  # ✅ func a() throws {}; do { try a() } catch {}
+  # ❌ func a() throws {}; ↓try a()
+
+  - force_unwrapping # <- it doesn't work T_T
+  # 这条涉及的很多，大家还是自己领悟吧，无非就是！和？
+
+  - implicit_getter  # <- it doesn't work T_T
+  # ✅  var foo: Int {
+  #            return 20 
+  #       }
+  # ❌  var foo: Int {
+  #             get {
+  #            return 20 
+  #             }
+  #       }
+
+  - implicit_return # <- it doesn't work T_T
+  # ✅ foo.map { $0 + 1 }
+  # ❌ foo.map { value in return value + 1 }
+
+  - let_var_whitespace # <- it doesn't work T_T
+  # ✅ var x = 2
+  #     
+  #     x = 1
+  # ❌ var x = 2
+  #     x = 1
+
+  - multiline_parameters # <- it doesn't work T_T
+  # 多参数格式问题，不许一行，全部换行一行一个
+
+  - multiple_closures_with_trailing_closure  # <- it doesn't work T_T
+  # 当你的参数是多个closure时候，尾随closure是不可以被使用的
+
+
+  - redundant_discardable_let 
+  # ✅ _ = foo()
+  # ❌ let _ = foo()
+
+  - redundant_string_enum_value
+
+  - shorthand_operator # <- it doesn't work T_T
+  # ✅ foo -= 1
+  # ❌ foo = foo - 1
+
+  - single_test_class # <- it doesn't work T_T
+  - switch_case_on_newline # <- it doesn't work T_T
+  - syntactic_sugar # <- it doesn't work T_T
+  # Array<T> should be [T]
+
+  - todo
+
+included: # paths to include during linting. `--path` is ignored if present.
+  # - Project
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+  - Pods
+  - Project/R.generated.swift
+
+# configurable rules can be customized from this configuration file
+# binary rules can set their severity level
+force_cast: warning # implicitly. Give warning only for force casting
+
+force_try:
+  severity: warning # explicitly. Give warning only for force try
+
+type_body_length:
+  - 300 # warning
+  - 400 # error
+
+# or they can set both explicitly
+function_body_length:
+  warning: 50
+  error: 66
+
+line_length:
+  warning: 166
+  error: 188
+
+file_length:
+  warning: 500
+  error: 666
+
+large_tuple: # warn user when using 3 values in tuple, give error if there are 4
+   - 3
+   - 4
+   
+# naming rules can set warnings/errors for min_length and max_length
+# additionally they can set excluded names
+type_name:
+  min_length: 4 # only warning
+  max_length: # warning and error
+    warning: 30
+    error: 35
+  excluded: iPhone # excluded via string
+reporter: "xcode"

@@ -26,5 +26,5 @@ Pod::Spec.new do |s|
     'LHSticker' => ['LHSticker/*.{png,nib}']
   }
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'SnapKit'
 end

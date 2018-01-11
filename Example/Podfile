@@ -2,10 +2,9 @@ use_frameworks!
 
 target 'LHSticker_Example' do
   pod 'LHSticker', :path => '../'
-
+  pod 'SwiftLinter', :git => 'http://git.mogo.com/NexT/SwiftLinter.git'
+  
   target 'LHSticker_Tests' do
     inherit! :search_paths
-
-    
   end
 end
