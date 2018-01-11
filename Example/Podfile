@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'LHSticker_Example' do
+  pod 'LHSticker', :path => '../'
+
+  target 'LHSticker_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
