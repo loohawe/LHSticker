@@ -13,8 +13,8 @@ public class SlideImagesView: UIView {
 
     // MARK: - Public property
 
-    public var groupImage: [[String: Any]] = //[]
-        [
+    public var groupImage: [[String: Any]] = []
+        /**[
             ["name": "客厅", "subcategories": [
                 ["iconUrl": "http://image.mgzf.com//mogoroom/2016-03/imagefile/flats/8/2/38/38_1458117526611.JPG!mobile"],
                 ["iconUrl": "http://image.mgzf.com//mogoroom/2016-03/imagefile/flats/8/2/38/38_1458117532050.JPG!mobile"],
@@ -37,7 +37,7 @@ public class SlideImagesView: UIView {
                 ["iconUrl": "http://image.mgzf.com//mogoroom/2016-03/imagefile/flats/8/2/38/38_1458117551436.JPG!mobile"],
                 ["iconUrl": "http://image.mgzf.com//mogoroom/2016-03/imagefile/flats/8/2/38/38_1458117557953.JPG!mobile"]
                 ]]
-    ]
+    ]**/
 
     /// 设置图片自动播放的时间间隔
     /// 如果 <= 0, 则不自动播放
