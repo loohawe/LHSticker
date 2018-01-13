@@ -35,15 +35,6 @@ extension UIView {
                 pView.snp.makeConstraints({ make in
                     make.edges.equalToSuperview()
                 })
-//                let leadingCons = NSLayoutConstraint(item: pView, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 0.0)
-//                leadingCons.priority = UILayoutPriority.init(750)
-//                let trailingCons = NSLayoutConstraint(item: pView, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: 0.0)
-//                trailingCons.priority = UILayoutPriority.init(750)
-//                let topCons = NSLayoutConstraint(item: pView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 0.0)
-//                topCons.priority = UILayoutPriority.init(750)
-//                let bottomCons = NSLayoutConstraint(item: pView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: 0.0)
-//                bottomCons.priority = UILayoutPriority.init(750)
-//                self.addConstraints([topCons, trailingCons, bottomCons, leadingCons])
 
             } else {
                 subviews.forEach({ item in

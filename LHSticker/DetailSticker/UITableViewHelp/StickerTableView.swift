@@ -19,7 +19,7 @@ public class StickerTableView: NSObject {
     // MARK: - Public property
     var tableView: UITableView? {
         didSet {
-            setup(tableView!)
+            setup(tableView)
         }
     }
 
@@ -43,12 +43,12 @@ public class StickerTableView: NSObject {
 extension StickerTableView {
 
     /// 设置 tableView 的代理
-    private func setup(_ tableView: UITableView) {
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.sectionFooterHeight = 1.0
-        tableView.sectionHeaderHeight = sectionSpecing > 1.0 ? sectionSpecing - 1.0 : 1.0
-        tableView.estimatedRowHeight = 44.0
+    private func setup(_ tableView: UITableView?) {
+        tableView?.delegate = self
+        tableView?.dataSource = self
+        tableView?.sectionFooterHeight = 1.0
+        tableView?.sectionHeaderHeight = sectionSpecing > 1.0 ? sectionSpecing - 1.0 : 1.0
+        tableView?.estimatedRowHeight = 44.0
     }
 }
 
@@ -80,7 +80,7 @@ extension StickerTableView {
             .map { self._cellList[$0] }
             .enumerated()
             .forEach({ enume in
-                (enume.element.view as! StickerView).willFetchModel()
+                (enume.element.view as? StickerView)?.willFetchModel()
                 tableView?.reloadSections(IndexSet(integer: enume.offset), with: UITableViewRowAnimation.fade)
             })
         reloadData()
@@ -94,10 +94,10 @@ extension StickerTableView {
             let vm = item.viewModel
             let cellIndexList = item.cellIndex
             let copyTableView = tableView
-            vm.fetchDataComplete({ [weak copyTableView, weak self] (success, model) in
+            vm.fetchDataComplete({ [weak copyTableView, weak self] success, model in
                 guard let `self` = self else { return }
                 cellIndexList.forEach({ index in
-                    (self._cellList[index].view as! StickerView).didFetchModelSuccess(success, model: model)
+                    (self._cellList[index].view as? StickerView)?.didFetchModelSuccess(success, model: model)
                     self._cellList[index].isShow = success
                     //copyTableView?.reloadRows(at: [IndexPath.init(row: 0, section: i)], with: UITableViewRowAnimation.none)
                     copyTableView?.reloadSections(IndexSet(integer: index), with: UITableViewRowAnimation.none)
@@ -159,10 +159,14 @@ private struct StickerCellContainer {
         aCell.selectionStyle = .none
         aCell.contentView.addSubview(view)
         let contentView = aCell.contentView
-        let topCons = NSLayoutConstraint(item: contentView, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: .top, multiplier: 1.0, constant: 0.0)
-        let trailingCons = NSLayoutConstraint(item: contentView, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1.0, constant: 0.0)
-        let bottomCons = NSLayoutConstraint(item: contentView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1.0, constant: 0.0)
-        let leadingCons = NSLayoutConstraint(item: contentView, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1.0, constant: 0.0)
+        let topCons = NSLayoutConstraint(item: contentView, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal,
+                                         toItem: view, attribute: .top, multiplier: 1.0, constant: 0.0)
+        let trailingCons = NSLayoutConstraint(item: contentView, attribute: .trailing, relatedBy: .equal,
+                                              toItem: view, attribute: .trailing, multiplier: 1.0, constant: 0.0)
+        let bottomCons = NSLayoutConstraint(item: contentView, attribute: .bottom, relatedBy: .equal,
+                                            toItem: view, attribute: .bottom, multiplier: 1.0, constant: 0.0)
+        let leadingCons = NSLayoutConstraint(item: contentView, attribute: .leading, relatedBy: .equal,
+                                             toItem: view, attribute: .leading, multiplier: 1.0, constant: 0.0)
         contentView.addConstraints([topCons, trailingCons, bottomCons, leadingCons])
         cell = aCell
     }
@@ -190,12 +194,14 @@ internal struct VVMConnection {
 
 extension Array where Element == VVMConnection {
     internal func contains(viewModel vm: StickerViewModel) -> Bool {
+        // swiftlint:disable for_where
         for i in self {
             if i.viewModel.hashValue == vm.hashValue {
                 return true
             }
         }
         return false
+        // swiftlint:enable for_where
     }
 
     internal mutating func add(index: Int, to vm: StickerViewModel) {

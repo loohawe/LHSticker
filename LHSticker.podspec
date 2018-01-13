@@ -23,8 +23,9 @@ Pod::Spec.new do |s|
   s.source_files = 'LHSticker/**/*.{h,m,swift}'
   
   s.resource_bundles = {
-    'LHSticker' => ['LHSticker/*.{png,nib}']
+    'Resources' => ['LHSticker/**/*.{png,xib}']
   }
   # s.frameworks = 'UIKit', 'MapKit'
   s.dependency 'SnapKit'
+  s.dependency 'SDWebImage'
 end

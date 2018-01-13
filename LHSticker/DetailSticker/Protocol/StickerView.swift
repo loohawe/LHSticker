@@ -21,16 +21,20 @@ public protocol StickerView {
 extension StickerView where Self: UIView {
 
     /// 从 Xib 初始化自己
-    public func loadFormNib(_ bundle: Bundle? = BundleHelper.resourcesBundle()) {
+    public func loadFormNib(_ bundle: Bundle?) {
         self.translatesAutoresizingMaskIntoConstraints = false
         let selfNib = UINib(nibName: "\(type(of: self))", bundle: bundle)
         if let selfView = selfNib.instantiate(withOwner: self, options: nil).first as? UIView {
             selfView.translatesAutoresizingMaskIntoConstraints = false
             self.addSubview(selfView)
-            let leadingCons = NSLayoutConstraint(item: self, attribute: .leading, relatedBy: .equal, toItem: selfView, attribute: .leading, multiplier: 1.0, constant: 0.0)
-            let trailingCons = NSLayoutConstraint(item: self, attribute: .trailing, relatedBy: .equal, toItem: selfView, attribute: .trailing, multiplier: 1.0, constant: 0.0)
-            let topCons = NSLayoutConstraint(item: self, attribute: .top, relatedBy: .equal, toItem: selfView, attribute: .top, multiplier: 1.0, constant: 0.0)
-            let bottomCons = NSLayoutConstraint(item: self, attribute: .bottom, relatedBy: .equal, toItem: selfView, attribute: .bottom, multiplier: 1.0, constant: 0.0)
+            let leadingCons = NSLayoutConstraint(item: self, attribute: .leading, relatedBy: .equal,
+                                                 toItem: selfView, attribute: .leading, multiplier: 1.0, constant: 0.0)
+            let trailingCons = NSLayoutConstraint(item: self, attribute: .trailing, relatedBy: .equal,
+                                                  toItem: selfView, attribute: .trailing, multiplier: 1.0, constant: 0.0)
+            let topCons = NSLayoutConstraint(item: self, attribute: .top, relatedBy: .equal,
+                                             toItem: selfView, attribute: .top, multiplier: 1.0, constant: 0.0)
+            let bottomCons = NSLayoutConstraint(item: self, attribute: .bottom, relatedBy: .equal,
+                                                toItem: selfView, attribute: .bottom, multiplier: 1.0, constant: 0.0)
             bottomCons.priority = UILayoutPriority(rawValue: 999)
 
             self.addConstraints([topCons, trailingCons, bottomCons, leadingCons])

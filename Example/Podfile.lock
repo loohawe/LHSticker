@@ -1,6 +1,10 @@
 PODS:
   - LHSticker (0.1.0):
+    - SDWebImage
     - SnapKit
+  - SDWebImage (4.2.3):
+    - SDWebImage/Core (= 4.2.3)
+  - SDWebImage/Core (4.2.3)
   - SnapKit (4.0.0)
   - SwiftLinter (0.4)
 
@@ -20,7 +24,8 @@ CHECKOUT OPTIONS:
     :git: http://git.mogo.com/NexT/SwiftLinter.git
 
 SPEC CHECKSUMS:
-  LHSticker: 735fd75c75850e5e4fd24c438c0a696e452bfd68
+  LHSticker: 66bca0100d0aefabbf24cb3abfaf7b67c0d74cab
+  SDWebImage: 791bb72962b3492327ddcac4b1880bd1b5458431
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SwiftLinter: fe2224c9e62bde0c3a71ce06cd3edb35fc89b554
 

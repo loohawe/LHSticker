@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AlertViewController" customModule="LHSticker" customModuleProvider="target">
+            <connections>
+                <outlet property="_backgroundImageView" destination="z5x-dK-1Pf" id="v0t-m6-aap"/>
+                <outlet property="_backgroundView" destination="2Tm-ey-G4g" id="Ujh-Kb-E4Q"/>
+                <outlet property="_visuaEffectView" destination="ApS-jQ-Erh" id="qKI-Xm-anY"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Tm-ey-G4g">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z5x-dK-1Pf">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ApS-jQ-Erh" customClass="UIVisualEffectView">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="2Tm-ey-G4g" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6Wu-LV-BG3"/>
+                <constraint firstAttribute="bottom" secondItem="2Tm-ey-G4g" secondAttribute="bottom" id="MeQ-8S-ha8"/>
+                <constraint firstItem="ApS-jQ-Erh" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Smh-vO-Oxe"/>
+                <constraint firstAttribute="trailing" secondItem="z5x-dK-1Pf" secondAttribute="trailing" id="Szb-tP-mDw"/>
+                <constraint firstAttribute="trailing" secondItem="ApS-jQ-Erh" secondAttribute="trailing" id="UxY-ho-Qig"/>
+                <constraint firstAttribute="bottom" secondItem="ApS-jQ-Erh" secondAttribute="bottom" id="YJa-q1-lur"/>
+                <constraint firstAttribute="trailing" secondItem="2Tm-ey-G4g" secondAttribute="trailing" id="eMa-la-aoV"/>
+                <constraint firstItem="z5x-dK-1Pf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="gQZ-5c-IYs"/>
+                <constraint firstItem="z5x-dK-1Pf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="kAd-Za-naT"/>
+                <constraint firstAttribute="bottom" secondItem="z5x-dK-1Pf" secondAttribute="bottom" id="pOU-pH-opD"/>
+                <constraint firstItem="2Tm-ey-G4g" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="wMp-1n-fZQ"/>
+                <constraint firstItem="ApS-jQ-Erh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="xga-NN-NAU"/>
+            </constraints>
+            <point key="canvasLocation" x="24.5" y="52.5"/>
+        </view>
+    </objects>
+</document>

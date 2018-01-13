@@ -7,14 +7,18 @@
 
 import UIKit
 
-public class BundleHelper: NSObject {
+internal class BundleHelper: NSObject {
 
-    static public func resourceBundleURL() -> URL? {
+    static internal func subBundleURL(with name: String) -> URL? {
         let thisBundle = Bundle(for: BundleHelper.self)
-        return thisBundle.url(forResource: "Resources", withExtension: "bundle")
+        return thisBundle.url(forResource: name, withExtension: "bundle")
     }
 
-    static public func resourcesBundle() -> Bundle? {
+    static internal func resourceBundleURL() -> URL? {
+        return subBundleURL(with: "Resources")
+    }
+
+    static internal func resourcesBundle() -> Bundle? {
         //return Bundle(for: BundleHelper.self)
         if let bundleURL = resourceBundleURL() {
             return Bundle(url: bundleURL)
@@ -22,7 +26,7 @@ public class BundleHelper: NSObject {
         return nil
     }
 
-    static public func resourcesBundleFilePath(_ name: String, ofType: String) -> String {
+    static internal func resourcesBundleFilePath(_ name: String, ofType: String) -> String {
         return resourcesBundle()?.path(forResource: name, ofType: ofType) ?? ""
     }
 

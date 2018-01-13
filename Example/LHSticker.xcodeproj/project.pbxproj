@@ -13,6 +13,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		7595B6C02009C2F8003A2F95 /* SlideImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7595B6BF2009C2F8003A2F95 /* SlideImagesViewController.swift */; };
 		A9073C1266E251E933642606 /* Pods_LHSticker_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3CD75BB8A4F4AF8D8BE34E /* Pods_LHSticker_Example.framework */; };
 		D06120C6DAE8C905AF82DFD9 /* Pods_LHSticker_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D3DD657966C4840784D6DF3 /* Pods_LHSticker_Tests.framework */; };
 /* End PBXBuildFile section */
@@ -42,6 +43,7 @@
 		607FACE51AFB9204008FA782 /* LHSticker_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LHSticker_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		7595B6BF2009C2F8003A2F95 /* SlideImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideImagesViewController.swift; sourceTree = "<group>"; };
 		9F3CD75BB8A4F4AF8D8BE34E /* Pods_LHSticker_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LHSticker_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1D9E6EA746A6625C01F31CE /* Pods-LHSticker_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LHSticker_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LHSticker_Tests/Pods-LHSticker_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		EB0F44B29342B3C3D70405AB /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				7595B6BF2009C2F8003A2F95 /* SlideImagesViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -273,11 +276,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-LHSticker_Example/Pods-LHSticker_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/LHSticker/LHSticker.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LHSticker.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -388,6 +393,7 @@
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				7595B6C02009C2F8003A2F95 /* SlideImagesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
