@@ -189,7 +189,7 @@ extension SlideImagesView {
     private func timerAction() {
         let nextIndex = self.nextIndexPath(self.selectIndexPath)
         selectIndexPath = nextIndex
-        print("\(nextIndex.section)------\(nextIndex.row)")
+        //print("\(nextIndex.section)------\(nextIndex.row)")
         self.scrollToTop(section: nextIndex.section, item: nextIndex.row, animated: true)
         self.didSelectedHandle?(selectIndexPath.section, selectIndexPath.row)
     }
@@ -257,7 +257,7 @@ extension SlideImagesView: UICollectionViewDelegate, UICollectionViewDataSource 
     }
 
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.section)
+        //print(indexPath.section)
         selectIndexPath = indexPath
         didSelectedHandle?(indexPath.section, indexPath.row)
     }

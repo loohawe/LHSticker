@@ -81,6 +81,9 @@
                             <constraint firstItem="2zl-Tt-cyQ" firstAttribute="leading" secondItem="DMH-7j-OGQ" secondAttribute="leadingMargin" constant="30" id="wCT-CO-nXV"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="slideImages" destination="dvz-HC-LIN" id="ea2-t9-yLu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5nG-DJ-Gqz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -12,9 +12,14 @@ import SnapKit
 
 public class SlideImagesViewController: UIViewController {
 
+    @IBOutlet weak var slideImages: SlideImagesView!
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
 
+        slideImages.didSelectedHandle = { (section, row) in
+            print("********\(section)--\(row)")
+        }
     }
     
     @IBAction public func showAlertAction(_ sender: UIButton) {
