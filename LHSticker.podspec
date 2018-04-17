@@ -8,15 +8,15 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LHSticker'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = '分块加载的 View 使用的协议'
   s.description      = <<-DESC
                        分块加载的 View 使用的协议.
                        DESC
-  s.homepage         = 'http://git.mogo.com/NexT/LHSticker'
+  s.homepage         = 'https://github.com/loohawe/LHSticker'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'loohawe@gmail.com' => 'luhao@mogoroom.com' }
-  s.source           = { :git => 'http://git.mogo.com/NexT/LHSticker', :tag => s.version.to_s }
+  s.author           = { 'loohawe@gmail.com' => 'loohawe@gmail.com' }
+  s.source           = { :git => 'git@github.com:loohawe/LHSticker.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '8.0'
 
